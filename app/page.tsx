@@ -3,6 +3,7 @@ import Features0 from "./ui/features-0";
 import Features1 from "./ui/features-1";
 import Divider from "./ui/divider";
 import About from "./ui/about";
+import Portfolio from "./ui/portfolio";
 
 export default function Page() {
   return (
@@ -13,10 +14,9 @@ export default function Page() {
       <Features1 />
       <Divider />
       <About />
-      <div className="h-[100vh]" />
-      <div className="h-[100vh]" />
-      <div className="h-[100vh]" />
-      <div className="h-[100vh]" />
+      <Divider />
+      <Portfolio />
+      <Divider />
     </main>
   );
 }
