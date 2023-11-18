@@ -1,6 +1,6 @@
 "use client";
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import Thumb from "@/public/thumb-0.svg";
+import Thumb from "@/public/hero-0.svg";
 import Image from "next/image";
 
 export default function Hero() {
