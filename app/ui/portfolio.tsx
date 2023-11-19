@@ -1,54 +1,41 @@
+"use client";
 import { portfolio } from "@/public/portfolio";
 import clsx from "clsx";
 import Image from "next/image";
+import useWindowDimensions from "../hook/useWindowDimensions";
 
-const size = Math.ceil(portfolio.length / 4);
+function processArray<T>(items: T[]): [[T[], T[]], [T[], T[]]] {
+  // Divida o array original em duas partes (metade do comprimento)
+  const middleIndex = Math.floor(items.length / 2);
+  const firstHalf = items.slice(0, middleIndex);
+  const secondHalf = items.slice(middleIndex);
 
-const firstQuarter = portfolio.splice(0, size);
-const secondQuarter = portfolio.splice(0, size);
-const thirdQuarter = portfolio.splice(0, size);
-const fourthQuarter = portfolio;
+  // Divida cada metade em dois arrays
+  const firstHalfDivided: [T[], T[]] = [
+    firstHalf.slice(0, Math.floor(firstHalf.length / 2)),
+    firstHalf.slice(Math.floor(firstHalf.length / 2)),
+  ];
 
-const testimonials = [
-  [
-    firstQuarter.map((image) => ({
-      body: "Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.",
-      author: {
-        name: "Leslie Alexander",
-        handle: "lesliealexander",
-        imageUrl: image,
-      },
-    })),
-    secondQuarter.map((image) => ({
-      body: "Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.",
-      author: {
-        name: "Leslie Alexander",
-        handle: "lesliealexander",
-        imageUrl: image,
-      },
-    })),
-  ],
-  [
-    thirdQuarter.map((image) => ({
-      body: "Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.",
-      author: {
-        name: "Leslie Alexander",
-        handle: "lesliealexander",
-        imageUrl: image,
-      },
-    })),
-    fourthQuarter.map((image) => ({
-      body: "Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.",
-      author: {
-        name: "Leslie Alexander",
-        handle: "lesliealexander",
-        imageUrl: image,
-      },
-    })),
-  ],
-];
+  const secondHalfDivided: [T[], T[]] = [
+    secondHalf.slice(0, Math.floor(secondHalf.length / 2)),
+    secondHalf.slice(Math.floor(secondHalf.length / 2)),
+  ];
+
+  // Retorne o resultado como um array de duas posições, cada uma contendo um array
+  return [firstHalfDivided, secondHalfDivided];
+}
 
 export default function Portfolio() {
+  const { isMobile } = useWindowDimensions();
+  const testimonials = processArray(
+    (isMobile ? portfolio.slice(0, 4) : portfolio.slice(0, 12)).map(
+      (image) => ({
+        name: "Piettra Sol",
+        handle: "piettrasol",
+        imageUrl: image,
+      })
+    )
+  );
   return (
     <div className="relative isolate pb-32 pt-24 sm:pt-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -80,13 +67,13 @@ export default function Portfolio() {
                 >
                   {column.map((testimonial) => (
                     <figure
-                      key={testimonial.author.handle}
+                      key={testimonial.handle}
                       className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5"
                     >
                       <div className="flex-shrink-0 flex-grow ">
                         <Image
                           loading="lazy"
-                          src={testimonial.author.imageUrl}
+                          src={testimonial.imageUrl}
                           alt="thumb"
                           className="shadow rounded-2xl"
                         />
@@ -94,9 +81,9 @@ export default function Portfolio() {
                       <figcaption className="flex items-center gap-x-4 p-6">
                         <div>
                           <div className="font-semibold">
-                            {testimonial.author.name}
+                            {testimonial.name}
                           </div>
-                          <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                          <div className="text-gray-600">{`@${testimonial.handle}`}</div>
                         </div>
                       </figcaption>
                     </figure>
