@@ -7,6 +7,7 @@ import Portfolio from "./ui/portfolio";
 import Testimonials from "./ui/testimonials";
 import Care from "./ui/care";
 import Focus from "./ui/focus";
+import CTA from "./ui/cta";
 
 export default function Page() {
   return (
@@ -25,6 +26,8 @@ export default function Page() {
       <Care />
       <Divider />
       <Focus />
+      <Divider />
+      <CTA />
     </main>
   );
 }
