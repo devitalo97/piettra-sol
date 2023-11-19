@@ -5,6 +5,7 @@ import Divider from "./ui/divider";
 import About from "./ui/about";
 import Portfolio from "./ui/portfolio";
 import Testimonials from "./ui/testimonials";
+import Care from "./ui/care";
 
 export default function Page() {
   return (
@@ -19,6 +20,8 @@ export default function Page() {
       <Portfolio />
       <Divider />
       <Testimonials />
+      <Divider />
+      <Care />
     </main>
   );
 }
