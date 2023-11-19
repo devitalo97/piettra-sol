@@ -4,6 +4,7 @@ import Features1 from "./ui/features-1";
 import Divider from "./ui/divider";
 import About from "./ui/about";
 import Portfolio from "./ui/portfolio";
+import Testimonials from "./ui/testimonials";
 
 export default function Page() {
   return (
@@ -17,6 +18,7 @@ export default function Page() {
       <Divider />
       <Portfolio />
       <Divider />
+      <Testimonials />
     </main>
   );
 }
