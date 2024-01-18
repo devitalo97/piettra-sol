@@ -18,10 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-image: url('/texture.svg'), linear-gradient(
       to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgba(var(--background-start-rgb), 1),
+      rgba(var(--background-end-rgb), 1)
+    );
+  background-blend-mode: overlay; /* Esta propriedade define como a textura se mescla com o gradiente */
+  background-size: cover; /* Isto garante que a textura cubra toda a área */
+  background-repeat: no-repeat; /* Evita a repetição da textura */
 }
