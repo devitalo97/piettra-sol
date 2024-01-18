@@ -1,17 +1,17 @@
-import './ui/globals.css'
-import type { Metadata } from 'next'
-import { signika } from './ui/fonts'
-import Navbar from './ui/navbar'
+import "./ui/globals.css";
+import type { Metadata } from "next";
+import { signika } from "./ui/fonts";
+import Navbar from "./ui/navbar";
 
 export const metadata: Metadata = {
-  title: 'Piettra Sol Studio',
-  description: 'Criado por Beinus+ Clean Design',
-}
+  title: "Piettra Sol Studio",
+  description: "Powered by Beinus + Bold Design",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -20,5 +20,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }
