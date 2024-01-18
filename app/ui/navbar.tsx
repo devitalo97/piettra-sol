@@ -1,16 +1,64 @@
 "use client";
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import clsx from "clsx";
+import { Disclosure } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "@/public/logo.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import clsx from "clsx";
+
+const navigation = [
+  {
+    href: "#biosecurity",
+    label: "Biossegurança",
+  },
+  { href: "#about", label: "Sobre" },
+  { href: "#portfolio", label: "Portfólio" },
+  { href: "#testimonials", label: "Depoimentos" },
+  { href: "#care", label: "Cuidados" },
+];
+const getHash = () =>
+  typeof window !== "undefined"
+    ? decodeURIComponent(window.location.hash.replace("#", ""))
+    : undefined;
 
 export default function NavBar() {
+  const [hash, setHash] = useState<string | undefined>(undefined);
+  const isOptionInCurrentPathname = useCallback(
+    (href: string) => {
+      return hash && href.includes(hash);
+    },
+    [hash]
+  );
+
+  const handleClick = (e: { preventDefault: () => void }, href: string) => {
+    e.preventDefault();
+
+    const id = href.substring(1); // Remove o '#'
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setHash(href);
+  };
+  useEffect(() => {
+    const hash = getHash();
+
+    if (!hash) return;
+
+    const element = document.getElementById(hash);
+
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setHash(hash);
+  }, []);
+
   return (
     <Disclosure
       as="nav"
-      className="bg-transparent shadow sticky top-0 z-20 backdrop-blur"
+      className="bg-transparent shadow sticky top-0 z-50 backdrop-blur"
     >
       {({ open }) => (
         <>
@@ -29,7 +77,7 @@ export default function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-start sm:items-stretch">
-                <div className="flex flex-shrink-0 items-center">
+                <Link href="/" className="flex flex-shrink-0 items-center">
                   <Image
                     width={32}
                     height={32}
@@ -37,46 +85,24 @@ export default function NavBar() {
                     src={logo}
                     alt="Piettra sol studio"
                   />
-                </div>
+                </Link>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                {/* Current: "border-piettra-highlight text-white", Default: "border-transparent text-gray-300 hover:border-gray-300 hover:text-gray-400" */}
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-piettra-highlight px-1 pt-1 text-sm font-medium text-white"
-                >
-                  Bio Segurança
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400"
-                >
-                  Sobre
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400"
-                >
-                  Portifólio
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400"
-                >
-                  Depoimentos
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400"
-                >
-                  Cuidados
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400"
-                >
-                  Sobre
-                </a>
+                {/* Current: "", Default: "border-transparent text-gray-300 hover:border-gray-300 hover:text-gray-400" */}
+                {navigation.map((n) => (
+                  <Link
+                    key={n.href}
+                    href={n.href}
+                    onClick={(e) => handleClick(e, n.href)}
+                    className={clsx(
+                      "inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-300 hover:border-gray-300 hover:text-gray-400",
+                      isOptionInCurrentPathname(n.href) &&
+                        "border-piettra-highlight text-piettra-highlight"
+                    )}
+                  >
+                    {n.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -84,48 +110,21 @@ export default function NavBar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-4 pt-2">
               {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-piettra-highlight py-2 pl-3 pr-4 text-base font-medium text-piettra-highlight"
-              >
-                Bio Segurança
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Sobre
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Portifólio
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Depoimentos
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Cuidados
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
-              >
-                Sobre
-              </Disclosure.Button>
+              {navigation.map((n) => (
+                <Disclosure.Button
+                  as="a"
+                  key={n.href}
+                  href={n.href}
+                  onClick={(e) => handleClick(e, n.href)}
+                  className={clsx(
+                    "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700",
+                    isOptionInCurrentPathname(n.href) &&
+                      "border-piettra-highlight text-piettra-highlight"
+                  )}
+                >
+                  {n.label}
+                </Disclosure.Button>
+              ))}
             </div>
           </Disclosure.Panel>
         </>

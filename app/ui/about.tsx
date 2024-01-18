@@ -16,7 +16,7 @@
 
 export default function About() {
   return (
-    <div className="overflow-hidden w-full relative">
+    <div id="about" className="overflow-hidden w-full relative">
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:pb-0">
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
