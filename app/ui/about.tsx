@@ -13,14 +13,12 @@
   }
   ```
 */
-import thumb from "@/public/about-0.svg";
-import Image from "next/image";
 
 export default function About() {
   return (
     <div className="overflow-hidden w-full relative">
       <div className="absolute inset-0 bg-black bg-opacity-50" />
-      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:pb-0">
         <div className="mx-auto max-w-prose text-base lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-8">
           <div>
             <h2 className="text-lg font-semibold text-piettra-highlight">
@@ -35,12 +33,18 @@ export default function About() {
           <div className="relative lg:col-start-2 lg:row-start-1">
             <div className="relative mx-auto max-w-prose text-base lg:max-w-none">
               <figure>
-                <div className="aspect-h-7 aspect-w-12 lg:aspect-none lg:flex lg:justify-end">
-                  <Image src={thumb} alt="thumb" />
+                <div className="aspect-h-7 aspect-w-12 lg:aspect-none lg:flex lg:justify-end relative">
+                  <img src={"/about-0.svg"} alt="thumb" className="z-20" />
+                  <div className="absolute inset-0 z-10 flex">
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute left-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute right-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0 left-0 right-0" />
+                  </div>
                 </div>
-                <figcaption className="mt-3 flex text-sm text-white">
+                {/* <figcaption className="mt-3 flex text-sm text-white">
                   <span>Piettra Sol</span>
-                </figcaption>
+                </figcaption> */}
               </figure>
             </div>
           </div>

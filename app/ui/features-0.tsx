@@ -1,42 +1,5 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
 import Thumb from "@/public/features-0.svg";
 import Image from "next/image";
-
-const features = [
-  {
-    name: "Esterilização e Descartáveis",
-    description:
-      "Compromisso total com a segurança, usando esterilização rigorosa e materiais descartáveis.",
-    icon: CloudArrowUpIcon,
-  },
-  {
-    name: "Higiene Pessoal",
-    description: "Mantemos tudo bem limpinho para uma experiência tranquila.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Limpeza e Desinfecção",
-    description:
-      "O estúdio é sempre limpo e seguro para tornar sua arte corporal única.",
-    icon: ServerIcon,
-  },
-  {
-    name: "Tintas de Qualidade",
-    description:
-      "Usamos tintas tops para que sua tatuagem seja única e dure bastante.",
-    icon: LockClosedIcon,
-  },
-  {
-    name: "Cuidado e Acompanhamento",
-    description:
-      "Vamos além da tatuagem, cuidando de você durante todo o processo.",
-    icon: ServerIcon,
-  },
-];
 
 export default function Features() {
   return (
@@ -57,27 +20,25 @@ export default function Features() {
                 limpo e livre de riscos.
               </p>
               <p className="mt-6 text-lg leading-8 text-white">
-                Aqui estão alguns dos protocólos e medidas que adotamos para
-                proteger sua saúde:
+                Estamos comprometidos em proporcionar a você uma experiência
+                segura e confortável durante todo o processo de tatuagem.
               </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-white lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-piettra-highlight">
-                      <feature.icon
-                        className="absolute left-1 top-1 h-5 w-5 text-piettra-highlight"
-                        aria-hidden="true"
-                      />
-                      {feature.name}
-                    </dt>{" "}
-                    <dd className="inline">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="mt-6 text-lg leading-8 text-white">
+                Sua saúde e bem-estar são fundamentais para nós, e nos
+                esforçamos para cumprir os mais altos padrões de biossegurança.
+                Estamos à disposição para responder a quaisquer perguntas
+                adicionais que você possa ter sobre nossas práticas de
+                biossegurança.
+              </p>
             </div>
           </div>
           <div className="flex-shrink-0 flex-grow">
-            <Image priority src={Thumb} alt="thumb" className="shadow" />
+            <Image
+              priority
+              src={Thumb}
+              alt="thumb"
+              className="shadow-xl rounded-lg"
+            />
           </div>
         </div>
       </div>
