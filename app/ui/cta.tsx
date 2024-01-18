@@ -15,6 +15,7 @@ export default function CTA() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
                 href="https://wa.me/5527999697185?text=Olá,%20piettra!%20quero%20fazer%20o%20orçamento!"
+                target="_blank"
                 className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-piettra-500 shadow-sm hover:bg-piettra-500 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white text-center"
               >
                 Orçamento
