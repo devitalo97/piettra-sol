@@ -22,14 +22,13 @@ export default function Features() {
     },
     {
       name: "Limpeza e Desinfecção",
-      description:
-        "O estúdio é sempre limpo e seguro para tornar sua arte corporal única.",
+      description: "Preservando a arte com cuidado e zelo",
       icon: biosecurity.clean,
     },
     {
       name: "Tintas de Qualidade",
       description:
-        "Usamos tintas tops para que sua tatuagem seja única e dure bastante.",
+        "Usamos tintas de alta qualidade para que a tatuagem seja única com garantia de durabilidade.",
       icon: biosecurity.color,
     },
     {
@@ -43,7 +42,7 @@ export default function Features() {
   return (
     <div className="overflow-hidden pb-24 sm:pb-32">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="flex-shrink-0 flex-grow row-start-2 lg:row-start-[unset]">
             <Image
               priority
@@ -52,7 +51,7 @@ export default function Features() {
               className="shadow-xl rounded-lg"
             />
           </div>
-          <div className="px-6 md:px-0 lg:pr-4 lg:pt-4">
+          <div className="px-6 md:px-0 lg:pr-4">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
               <h2 className="text-base font-semibold leading-7 text-piettra-highlight">
                 Protocolos
