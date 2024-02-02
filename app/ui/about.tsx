@@ -14,6 +14,8 @@
   ```
 */
 
+import Divider from "./divider";
+
 export default function About() {
   return (
     <div id="about" className="overflow-hidden w-full relative">
@@ -35,11 +37,16 @@ export default function About() {
               <figure>
                 <div className="aspect-h-7 aspect-w-12 lg:aspect-none lg:flex lg:justify-end relative">
                   <img src={"/about-0.svg"} alt="thumb" className="z-20" />
+
                   <div className="absolute inset-0 z-10 flex">
-                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute left-0" />
-                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute right-0" />
-                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0" />
-                    <div className="w-[50%] h-[50%] bg-piettra-tw-900 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0 left-0 right-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-500 bg-opacity-50 rounded-full blur-[80px] absolute top-0 left-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-500 bg-opacity-50 rounded-full blur-[80px] absolute top-[200px] -right-[200px]" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-500 bg-opacity-50 rounded-full blur-[80px] absolute top-0 right-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-500 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0 right-0" />
+                    <div className="w-[50%] h-[50%] bg-piettra-tw-500 bg-opacity-50 rounded-full blur-[80px] absolute bottom-0 left-0" />
+                    <span className="absolute bottom-0 w-full">
+                      <Divider />
+                    </span>
                   </div>
                 </div>
                 {/* <figcaption className="mt-3 flex text-sm text-white">

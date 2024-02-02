@@ -4,6 +4,7 @@ import {
   ServerIcon,
 } from "@heroicons/react/20/solid";
 import Thumb from "@/public/features-1.svg";
+import { biosecurity } from "@/app/ui/icons";
 import Image from "next/image";
 
 export default function Features() {
@@ -12,30 +13,30 @@ export default function Features() {
       name: "Esterilização e Descartáveis",
       description:
         "Compromisso total com a segurança, usando esterilização rigorosa e materiais descartáveis.",
-      icon: CloudArrowUpIcon,
+      icon: biosecurity.disposable,
     },
     {
       name: "Higiene Pessoal",
       description: "Mantemos tudo bem limpinho para uma experiência tranquila.",
-      icon: LockClosedIcon,
+      icon: biosecurity.hygiene,
     },
     {
       name: "Limpeza e Desinfecção",
       description:
         "O estúdio é sempre limpo e seguro para tornar sua arte corporal única.",
-      icon: ServerIcon,
+      icon: biosecurity.clean,
     },
     {
       name: "Tintas de Qualidade",
       description:
         "Usamos tintas tops para que sua tatuagem seja única e dure bastante.",
-      icon: LockClosedIcon,
+      icon: biosecurity.color,
     },
     {
       name: "Cuidado e Acompanhamento",
       description:
         "Vamos além da tatuagem, cuidando de você durante todo o processo.",
-      icon: ServerIcon,
+      icon: biosecurity.care,
     },
   ];
 
@@ -63,9 +64,9 @@ export default function Features() {
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-white lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-piettra-highlight">
+                    <dt className="inline font-semibold">
                       <feature.icon
-                        className="absolute left-1 top-1 h-5 w-5 text-piettra-highlight"
+                        className="absolute left-1 top-1 h-6 w-6 stroke-piettra-highlight text-piettra-highlight fill-piettra-highlight"
                         aria-hidden="true"
                       />
                       {feature.name}

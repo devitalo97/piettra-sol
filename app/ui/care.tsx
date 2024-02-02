@@ -4,6 +4,20 @@ import {
   ServerIcon,
 } from "@heroicons/react/20/solid";
 
+const detailCareList = [
+  "Lavar regularmente com água durante 3 dias o excesso de tinta que a pele naturalmente expele.",
+  "Não ingerir alimentos remosos.",
+  "Caso a pele esquente, faça compressa com água ou soro fisiológico.",
+  "Evite locais com poeira, sujeira e areia.",
+  "Após 4 dias passar hidratante nivea todos os dias 3 vezes ao dia.",
+  "Não arranque e nem coce as casquinhas pois a tatuagem ficará falhada.",
+  "Não passar nenhum produto nos 3 primeiros dias.",
+  "Você sentirá coceira no local. Para acalmar, coloque o hidratante na geladeira e use-o gelado.",
+  "Evitar o sol ou mormaço por no mínimo 14 dias.",
+  "Protetor solar após 15 dias.",
+  "Não usar roupas apertadas que possam gerar atrito com a pele no local da tatuagem.",
+  "Não ingerir bebidas alcoólicas ou substâncias ilicitas por no mínimo 2 semanas.",
+];
 export default function Care() {
   return (
     <div id="care" className="relative bg-white w-full">
@@ -95,39 +109,12 @@ export default function Care() {
                 Uma lista mais detalhada de cuidados:
               </h2>
               <ul role="list" className="mt-8 space-y-4 text-gray-600">
-                <li>
-                  Lavar regularmente com água durante 3 dias o excesso de tinta
-                  que a pele naturalmente expele.
-                </li>
-                <li>Não ingerir alimentos remosos.</li>
-                <li>
-                  Caso a pele esquente, faça compressa com água ou soro
-                  fisiológico.
-                </li>
-                <li>Evite locais com poeira, sujeira e areia.</li>
-                <li>
-                  Após 4 dias passar hidratante nivea todos os dias 3 vezes ao
-                  dia.
-                </li>
-                <li>
-                  Não arranque e nem coce as casquinhas pois a tatuagem ficará
-                  falhada.
-                </li>
-                <li>Não passar nenhum produto nos 3 primeiros dias.</li>
-                <li>
-                  Você sentirá coceira no local. Para acalmar, coloque o
-                  hidratante na geladeira e use-o gelado.
-                </li>
-                <li>Evitar o sol ou mormaço por no mínimo 14 dias.</li>
-                <li>Protetor solar após 15 dias.</li>
-                <li>
-                  Não usar roupas apertadas que possam gerar atrito com a pele
-                  no local da tatuagem.
-                </li>
-                <li>
-                  Não ingerir bebidas alcoólicas ou substâncias ilicitas por no
-                  mínimo 2 semanas.
-                </li>
+                {detailCareList.map((item) => (
+                  <li key={item} className="relative pl-4">
+                    <div className="absolute left-0 top-0 translate-y-full w-2 h-2 bg-piettra-highlight rounded-full"></div>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

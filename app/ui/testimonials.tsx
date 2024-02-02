@@ -5,16 +5,16 @@ const testimonials = [
   {
     body: "Tatuar com Pie me trouxe uma autoestima que eu não fazia ideia que existia, desde que comecei a tatuar com ela, nunca mais quis outro tatuador, confio de olhos fechados. Ela sempre me surpreende fazendo um trampo melhor do que eu poderia imaginar, principalmente nas tattoos de cartoon coloridas que são meu xodos e ninguém faz como ela.",
     author: {
-      name: "Amiga",
-      handle: "amiga",
+      name: "Pamela Sales",
+      handle: "pamelaSales",
       imageUrl: testimonial.testimonial1,
     },
   },
   {
     body: "Uma artista excelente no que faz!! Traços limpos, delicados e com ótima fixação. Executa seu trabalho com muita destreza e segurança. Atendimento perfeito desde o orçamento, criação da arte e na execução final.",
     author: {
-      name: "Mão de Piettra",
-      handle: "maedepiettra",
+      name: "Márcia Mello",
+      handle: "marciamello",
       imageUrl: testimonial.testimonial4,
     },
   },

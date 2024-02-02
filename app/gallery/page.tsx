@@ -74,14 +74,14 @@ export default function Portfolio() {
                           className="shadow rounded-2xl"
                         />
                       </div>
-                      <figcaption className="flex items-center gap-x-4 p-6">
+                      {/* <figcaption className="flex items-center gap-x-4 p-6">
                         <div>
                           <div className="font-semibold">
                             {testimonial.name}
                           </div>
                           <div className="text-gray-600">{`@${testimonial.handle}`}</div>
                         </div>
-                      </figcaption>
+                      </figcaption> */}
                     </figure>
                   ))}
                 </div>
