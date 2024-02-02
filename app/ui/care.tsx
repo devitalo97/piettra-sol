@@ -1,8 +1,4 @@
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import { ArrowDownRightIcon } from "@heroicons/react/20/solid";
 
 const detailCareList = [
   "Lavar regularmente com água durante 3 dias o excesso de tinta que a pele naturalmente expele.",
@@ -60,7 +56,7 @@ export default function Care() {
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
-                  <CloudArrowUpIcon
+                  <ArrowDownRightIcon
                     className="mt-1 h-5 w-5 flex-none text-piettra-highlight"
                     aria-hidden="true"
                   />
@@ -73,7 +69,7 @@ export default function Care() {
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <LockClosedIcon
+                  <ArrowDownRightIcon
                     className="mt-1 h-5 w-5 flex-none text-piettra-highlight"
                     aria-hidden="true"
                   />
@@ -86,7 +82,7 @@ export default function Care() {
                   </span>
                 </li>
                 <li className="flex gap-x-3">
-                  <ServerIcon
+                  <ArrowDownRightIcon
                     className="mt-1 h-5 w-5 flex-none text-piettra-highlight"
                     aria-hidden="true"
                   />
