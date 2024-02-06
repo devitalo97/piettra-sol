@@ -31,7 +31,7 @@ export default function Hero() {
             </h1>
             <div className="mt-10 flex items-center gap-x-6">
               <a
-                href="https://wa.me/5527999326568?text=Olá,%20Piettra!%20quero%20fazer%20o%20orçamento!"
+                href="https://wa.me/5527999326568?text=Olá,%20Piettra!%20Quero%20fazer%20o%20orçamento!"
                 target="_blank"
                 className="rounded-md w-1/2 bg-piettra-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-piettra-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-piettra-600 text-center"
               >
